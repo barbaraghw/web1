@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Sirius Radio Example</title>
+    <script defer src="../js/Sirius.js" type="module"></script>
+    <script defer src="../js/SiriusRadio.js" type="module"></script>
+</head>
+<body>
+
+<script type="module">
+    import sirius from '../js/Sirius.js';        
+    import {SIRIUS_CHECKBOX, SiriusCheckbox} from '../js/SiriusCheckbox.js';
+    import {SIRIUS_ELEMENT} from "../js/SiriusElement.js"
+
+    sirius.onLoaded = async () => {
+        const idKey = SIRIUS_ELEMENT.ATTRIBUTES.ID.NAME;
+        const labelKey = SIRIUS_RADIO.ATTRIBUTES.LABEL.NAME;
+        const selectedKey = SIRIUS_RADIO.ATTRIBUTES.SELECTED.NAME;
+    }
+
+    sirius.onLoaded = async () => {
+        const siriusRadio1 = new SiriusRadio({
+            [idKey]: 'radio-1',
+            [labelKey]: 'fresa',
+            [selectedKey]: false
+        });
+
+        // Doesn't work
+        const siriusRadio2 = new SiriusRadio({
+            [idKey]: 'radio-2',
+            [labelKey]: 'mora',
+            [selectedKey]: true
+        });
+
+        siriusRadio1.addToBody()
+        siriusRadio2.addToBody()
+    };
+
+</script>
+
+<sirius-radio id="radio-3" label="1"></sirius-radio>
+<sirius-radio id="radio-4" label="2"></sirius-radio>
+<sirius-radio id="radio-5" label="3"></sirius-radio>
+</body>
+</html>
